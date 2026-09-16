@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,42 +12,42 @@
     <div class="logo">🎵</div>
     <div>
       <h1>ThaiPass Music</h1>
-      <p>👤 ผู้ใช้ ThaiPass (Demo) • App ด้วย JS</p>
+      <p>👤 ThaiPass User (Demo) • JS App</p>
     </div>
   </header>
 
   <div class="card">
     <div class="now">
-      <img id="cover" src="https://picsum.photos/seed/music1/300/300" alt="ปก">
+      <img id="cover" src="https://picsum.photos/seed/music1/300/300" alt="Cover">
       <div class="meta">
-        <h2 id="title">ยังไม่ได้เลือกเพลง</h2>
-        <p id="artist">กด + เพิ่มเพลง แล้วกดเล่น</p>
+        <h2 id="title">No song selected</h2>
+        <p id="artist">Press + Add Songs, then play</p>
         <input type="range" id="progress" value="0" min="0" max="1000">
         <div class="time"><span id="cur">0:00</span><span id="dur">0:00</span></div>
       </div>
     </div>
     <div class="controls">
-      <button id="shuf" class="btn dim" title="สุ่ม">🔀</button>
-      <button id="prev" class="btn navy" title="ก่อนหน้า">⏮</button>
-      <button id="play" class="btn green big" title="เล่น/หยุด">▶</button>
-      <button id="next" class="btn navy" title="ถัดไป">⏭</button>
-      <button id="rep" class="btn dim" title="วนซ้ำ">🔁</button>
+      <button id="shuf" class="btn dim" title="Shuffle">🔀</button>
+      <button id="prev" class="btn navy" title="Previous">⏮</button>
+      <button id="play" class="btn green big" title="Play/Pause">▶</button>
+      <button id="next" class="btn navy" title="Next">⏭</button>
+      <button id="rep" class="btn dim" title="Repeat">🔁</button>
     </div>
     <div class="vol-row">
       <span>🔊</span>
       <input type="range" id="vol" min="0" max="1" step="0.01" value="0.8">
-      <span id="count" class="count">0 เพลง</span>
+      <span id="count" class="count">0 songs</span>
     </div>
   </div>
 
   <div class="toolbar">
-    <input type="text" id="search" placeholder="🔍 ค้นหาเพลง...">
-    <label for="file" class="add">+ เพิ่มเพลง</label>
+    <input type="text" id="search" placeholder="🔍 Search songs...">
+    <label for="file" class="add">+ Add Songs</label>
     <input type="file" id="file" accept="audio/*" multiple hidden>
   </div>
 
   <ul id="list"></ul>
-  <p class="hint">รองรับ .mp3 / .wav • ดับเบิลคลิกเพื่อเล่น • ลากแถบเพื่อกรอเพลง</p>
+  <p class="hint">Supports .mp3 / .wav • Double-click to play • Drag the bar to seek</p>
 </div>
 <audio id="audio" preload="metadata"></audio>
 <script src="app.js"></script>

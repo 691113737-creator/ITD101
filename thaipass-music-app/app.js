@@ -1,6 +1,6 @@
-// โปรแกรม App เล่นเพลงด้วย JS + จำลอง AI ThaiPass
-const thaiPassUser = { name: "ผู้ใช้ ThaiPass (Demo)", id: "THAI-1234" };
-console.log("AI: สวัสดี " + thaiPassUser.name + " ยินดีต้อนรับสู่ Music App (JS)");
+// Music player app in JS + simulated AI ThaiPass login
+const thaiPassUser = { name: "ThaiPass User (Demo)", id: "THAI-1234" };
+console.log("AI: Hello " + thaiPassUser.name + ", welcome to Music App (JS)");
 
 let songs = [
   { title: "SoundHelix Song 1", artist: "T. Schürger", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", cover: "https://picsum.photos/seed/music1/300/300" },
@@ -61,19 +61,19 @@ function render(q = "") {
     if (i === idx) li.classList.add("active");
     li.innerHTML = "<span><b>" + (i === idx ? "▶ " : "🎵 ") + s.title + "</b><br><small>" + s.artist + "</small></span>";
     const x = document.createElement("button");
-    x.className = "x"; x.textContent = "✕"; x.title = "ลบเพลง";
+    x.className = "x"; x.textContent = "✕"; x.title = "Remove song";
     x.onclick = (e) => {
       e.stopPropagation();
       songs.splice(i, 1);
       if (idx >= songs.length) idx = 0;
-      if (songs.length) load(idx); else { titleEl.textContent = "ยังไม่ได้เลือกเพลง"; audio.src = ""; }
+      if (songs.length) load(idx); else { titleEl.textContent = "No song selected"; audio.src = ""; }
       render(searchEl.value);
     };
     li.appendChild(x);
     li.onclick = () => { load(i); play(); };
     listEl.appendChild(li);
   });
-  countEl.textContent = songs.length + " เพลง";
+  countEl.textContent = songs.length + " songs";
 }
 
 playBtn.onclick = toggle;
@@ -95,10 +95,10 @@ audio.addEventListener("ended", () => { if (!isRepeat) next(); });
 searchEl.addEventListener("input", () => render(searchEl.value));
 fileEl.addEventListener("change", (e) => {
   [...e.target.files].forEach(f => {
-    songs.push({ title: f.name.replace(/\.[^/.]+$/, ""), artist: "เพลงของฉัน", src: URL.createObjectURL(f), cover: "https://picsum.photos/seed/" + Date.now() + Math.random() + "/300/300" });
+    songs.push({ title: f.name.replace(/\.[^/.]+$/, ""), artist: "My Song", src: URL.createObjectURL(f), cover: "https://picsum.photos/seed/" + Date.now() + Math.random() + "/300/300" });
   });
   render(searchEl.value);
-  alert("เพิ่มเพลงแล้ว!");
+  alert("Song(s) added!");
 });
 
 audio.volume = 0.8;

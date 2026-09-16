@@ -1,19 +1,27 @@
 # ThaiPass Music App
 
-แอปเล่นเพลง 2 แบบในที่เดียว
+A music player app in two versions, built with JavaScript and a simulated AI ThaiPass login.
 
-## 1. แบบ JS (เปิดในเบราว์เซอร์)
-- `index.html` — ดับเบิลคลิกเพื่อเปิด (Chrome / Edge)
-- `app.js` — โค้ดหลัก + จำลอง login AI ThaiPass
-- `style.css` — ธีมเข้มม่วง
+## 1. JS version (open in a browser)
+- `index.html` — double-click to open (Chrome / Edge)
+- `app.js` — main code + simulated AI ThaiPass login
+- `style.css` — dark purple theme
 
-วิธีเล่น: เปิด `index.html` → กด ▶ → มี 3 เพลงตัวอย่าง, เพิ่ม MP3 ตัวเองได้, ค้นหา / สุ่ม / วนซ้ำ / ปรับเสียง
+How to play: open `index.html` → press ▶ → 3 sample songs included, add your own MP3 files, search / shuffle / repeat / volume control.
 
-## 2. แบบ Desktop (.exe)
-- `MusicPlayer.cs` — ซอร์ส C# WinForms
-- `MusicApp.exe` — ดับเบิลคลิกเล่นได้เลย (Windows)
+## 2. Desktop version (.exe)
+- `MusicPlayer.cs` — C# WinForms source code
+- `MusicApp.exe` — double-click to run (Windows)
 
 ```sh
-# คอมไพล์ใหม่ (ถ้าแก้ .cs)
+# Recompile (after editing .cs)
 & "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /target:winexe /out:MusicApp.exe MusicPlayer.cs /reference:System.Windows.Forms.dll /reference:System.Drawing.dll
 ```
+
+## Features
+- Play / pause / next / previous
+- Shuffle and repeat modes
+- Seek bar and volume control
+- Search songs in the playlist
+- Upload your own `.mp3` / `.wav` files
+- Auto-plays the next song when one finishes
